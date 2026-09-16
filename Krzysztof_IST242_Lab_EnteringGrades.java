@@ -10,6 +10,7 @@ public class Krzysztof_IST242_Lab_EnteringGrades {
             origValue = (int)grade;
             if(origValue == -1){
                 gradeavg = gradetotal / count;
+                System.out.println("The number of grades entered is: " + count);
                 System.out.println("The average of your grades is: " + gradeavg);
                 System.out.println("The minimum grade is: " + minGrade);
                 System.out.println("The maximum grade is: " + maxGrade);
