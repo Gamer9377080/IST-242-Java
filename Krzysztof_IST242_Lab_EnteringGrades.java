@@ -16,14 +16,14 @@ public class Krzysztof_IST242_Lab_EnteringGrades {
                 System.out.println("The maximum grade is: " + maxGrade);
                 break;
             }
-            if ((0>(int)grade) && ((int)grade>100)){
+            if ((0>(int)grade) || ((int)grade>100)){
                 System.out.println("Your grade is not in the range of 0-100 please enter it again: ");
                 grade = scn.nextDouble();
             }
-            if(grade<minGrade){
+            if((grade<minGrade) && (grade>=0)){
                 minGrade = (int)grade;
             }
-            if(grade>maxGrade){
+            if((grade>maxGrade) && (grade<=100)){
                 maxGrade = (int)grade;
             }
             gradetotal += grade;
