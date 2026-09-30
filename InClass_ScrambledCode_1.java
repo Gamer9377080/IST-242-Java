@@ -3,7 +3,13 @@
 //	IST242, Penn State Fall 2026
 //
 //	Description of this Program.
-// 
+/*  
+    This program prompts the user to enter a decimal value between 0 and 4,000,000.
+    It then converts the decimal value to binary and displays the binary 
+    representation in groups of 8 bits, separated by a dash. The program continues 
+    to prompt the user for input until they enter the exit value of -1.
+
+*/
 // 
 //	This program works however it is unreadable.
 //	Format this code properly according to the style guidelines described below.
@@ -31,12 +37,13 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class InClass_ScrambledCode_1 {
-
+public class InClass_ScrambledCode_1 
+{
     final static int EXIT_VALUE = -1;
 
     // -------------------------------------------------------
-    public static void main(String[] args) {
+    public static void main(String[] args) 
+    {
         Scanner scan = new Scanner(System.in);
         int r, temp;
         int[] binaryVals = new int[100];
@@ -45,41 +52,53 @@ public class InClass_ScrambledCode_1 {
         int destBase = 2;
         int numBits, i, numDisplayed;
         int inValue;
+
         for (i = 0; i < 100; i++)
             binaryVals[i] = 0;
         inValue = -2;
         // -- (fill in a comment)
-        while (((inValue < 0) || (inValue > 4000000)) && (inValue != EXIT_VALUE)) {
+
+        while (((inValue < 0) || (inValue > 4000000)) && (inValue != EXIT_VALUE)) 
+            {
             System.out.print("Enter a decimal value betwee 0-4000000: ");
             inValue = scan.nextInt();
+
             if (((inValue < 0) || (inValue > 4000000)) && (inValue != EXIT_VALUE))
                 System.out.println("You enter an invalid value !!!!");
-        }
+            }
         temp = inValue;
-        if (inValue != EXIT_VALUE) {// -- (fill in a comment)
-            while (temp != 0) {
+
+        if (inValue != EXIT_VALUE) 
+            {// -- (fill in a comment)
+
+            while (temp != 0) 
+                {
                 r = temp % destBase; // the remainders are the conversion digits.
                 temp = temp / destBase;
                 binaryVals[idx] = r;
                 idx++;
                 numDigits++;
-            } // -- (Fill in a comment).
+                } // -- (Fill in a comment).
             numBits = (((numDigits - 1) / 8) + 1) * 8;
             i = numBits - 1;
             numDisplayed = 0;
             System.out.print("\n" + inValue + " = ");
-            while (i >= 0) {
+
+            while (i >= 0) 
+                {
                 System.out.print(binaryVals[i] + " ");
                 numDisplayed++;
                 i--;
                 // -- fill in a comment
-                if ((numDisplayed == 8) && (i > 0)) {
+
+                if ((numDisplayed == 8) && (i > 0)) 
+                    {
                     System.out.print(" - ");
                     numDisplayed = 0;
+                    }
                 }
-            }
             System.out.println("\n\n");
-        }
+            }
         return;
     }
 }
