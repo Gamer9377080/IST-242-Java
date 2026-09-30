@@ -10,19 +10,20 @@ public class Krzysztof_IST242_Lab_EnteringGrades {
             origValue = (int)grade;
             if(origValue == -1){
                 gradeavg = gradetotal / count;
+                System.out.println("The number of grades entered is: " + count);
                 System.out.println("The average of your grades is: " + gradeavg);
                 System.out.println("The minimum grade is: " + minGrade);
                 System.out.println("The maximum grade is: " + maxGrade);
                 break;
             }
-            if ((0>(int)grade) && ((int)grade>100)){
+            if ((0>(int)grade) || ((int)grade>100)){
                 System.out.println("Your grade is not in the range of 0-100 please enter it again: ");
                 grade = scn.nextDouble();
             }
-            if(grade<minGrade){
+            if((grade<minGrade) && (grade>=0)){
                 minGrade = (int)grade;
             }
-            if(grade>maxGrade){
+            if((grade>maxGrade) && (grade<=100)){
                 maxGrade = (int)grade;
             }
             gradetotal += grade;
